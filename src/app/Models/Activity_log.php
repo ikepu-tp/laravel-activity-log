@@ -5,7 +5,6 @@ namespace ikepu_tp\ActivityLog\app\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * @property int $id
@@ -16,7 +15,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Activity_log extends Model
 {
     use HasFactory;
-    use SoftDeletes;
 
     /**
      * The attributes that should be cast to native types.

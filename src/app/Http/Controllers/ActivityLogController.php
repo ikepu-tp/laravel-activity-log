@@ -6,14 +6,18 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller as BaseController;
 use ikepu_tp\ActivityLog\app\Http\Requests\StoreRequest;
 use ikepu_tp\ActivityLog\app\Http\Requests\UpdateRequest;
+use ikepu_tp\ActivityLog\app\Models\Activity_log;
 
-class Controller extends BaseController
+class ActivityLogController extends BaseController
 {
     /**
      * Display a listing of the resource.
      */
     public function index(Request $request)
     {
+        return view("ActivityLog::activity-log.index", [
+            "logs" => Activity_log::where('user_id', $request->user(config("activity-log.guard"))->getKey())->orderBy("created_at", "DESC")->paginate($request->query("per", 10))->withQueryString(),
+        ]);
     }
 
     /**

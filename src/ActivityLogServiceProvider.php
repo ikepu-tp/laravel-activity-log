@@ -3,6 +3,8 @@
 namespace ikepu_tp\ActivityLog;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Blade;
 
 class ActivityLogServiceProvider extends ServiceProvider
 {
@@ -20,9 +22,11 @@ class ActivityLogServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->registerPublishing();
-        $this->defineRoutes();
+        //$this->defineRoutes();
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
         $this->loadViewsFrom(__DIR__ . "/resources/views", "ActivityLog");
+        Paginator::useBootstrap();
+        Blade::componentNamespace("ikepu_tp\\resources\\views\\components", "ActivityLog");
     }
 
     /**
@@ -75,6 +79,6 @@ class ActivityLogServiceProvider extends ServiceProvider
      */
     protected function defineRoutes()
     {
-        //$this->loadRoutesFrom(__DIR__ . "/routes/web.php");
+        $this->loadRoutesFrom(base_path("routes/activity-log.php"));
     }
 }
