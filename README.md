@@ -12,6 +12,7 @@ This is a library of activity log.
 ## How to use
 
 1. First of all, migrate.
+2. Add `\ikepu_tp\ActivityLog\app\Http\Middleware\ActivityLogMiddleware::class` to `Kernel.php`.
 
 ## Contributing
 

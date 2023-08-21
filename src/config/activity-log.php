@@ -18,7 +18,7 @@ return [
      *  - path
      *  - activity
      */
-    "activity_text" => ":pathで:activityをしました",
+    "activity_text" => ":pathに:activityをしました",
 
     /**
      * ----------------------------------------------------------------
@@ -40,7 +40,7 @@ return [
      *  - guard
      */
     "activities" => [
-        "dashboard" => "ダッシュボードの閲覧",
+        //"dashboard" => "ダッシュボードの閲覧",
 
         "user.update" => [
             "activity" => "ユーザー情報を更新しました",
