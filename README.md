@@ -2,7 +2,7 @@
 
 This is a library of activity log.
 
-[日本語版](https://qiita.com/ikepu-tp)
+[日本語版](https://qiita.com/ikepu-tp/items/47228f97d056fe05fbd9)
 
 ## Features
 
@@ -13,6 +13,7 @@ This is a library of activity log.
 
 1. First of all, migrate.
 2. Add `\ikepu_tp\ActivityLog\app\Http\Middleware\ActivityLogMiddleware::class` to `Kernel.php`.
+3. You can access `/activity-log` and see your acitivity logs. *edit `/route/activity-log.php` if you want to change routing.*
 
 ## Contributing
 
