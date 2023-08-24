@@ -15,7 +15,6 @@
 </head>
 
 <body style="background-color: rgb(243 244 246);">
-  @include('laravelAdmin::layouts.navigation')
   <main class="container w-80 p-0 my-5">
     <div id="root">
       @yield('content')
