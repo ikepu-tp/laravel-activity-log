@@ -4,8 +4,6 @@ namespace ikepu_tp\ActivityLog\app\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller as BaseController;
-use ikepu_tp\ActivityLog\app\Http\Requests\StoreRequest;
-use ikepu_tp\ActivityLog\app\Http\Requests\UpdateRequest;
 use ikepu_tp\ActivityLog\app\Models\Activity_log;
 
 class ActivityLogController extends BaseController
@@ -31,7 +29,7 @@ class ActivityLogController extends BaseController
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreRequest $storeRequest)
+    public function store()
     {
         //
     }
@@ -55,7 +53,7 @@ class ActivityLogController extends BaseController
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateRequest $updateRequest, string $user_id)
+    public function update(string $user_id)
     {
         //
     }

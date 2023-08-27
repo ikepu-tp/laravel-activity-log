@@ -3,6 +3,7 @@
 namespace ikepu_tp\ActivityLog;
 
 use ErrorException;
+use ikepu_tp\ActivityLog\app\Console\Commands\InstallCommand;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Blade;
@@ -23,11 +24,15 @@ class ActivityLogServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->registerPublishing();
-        $this->defineRoutes();
+        //$this->defineRoutes();
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
         $this->loadViewsFrom(__DIR__ . "/resources/views", "ActivityLog");
         Paginator::useBootstrap();
         Blade::componentNamespace("ikepu_tp\\resources\\views\\components", "ActivityLog");
+        if (!$this->app->runningInConsole()) return;
+        $this->commands([
+            InstallCommand::class,
+        ]);
     }
 
     /**

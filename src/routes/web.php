@@ -6,5 +6,5 @@ use Illuminate\Support\Facades\Route;
 Route::group([
     "middleware" => "auth:" . config("activity-log.guard"),
 ], function () {
-    Route::get("activity-log", [ActivityLogController::class, "index"])->name("activity-log.index");
+    Route::get("activity-log", [ActivityLogController::class, "index"])->middleware(["auth:" . config("activity-log.guard")])->name("activity-log.index");
 });
